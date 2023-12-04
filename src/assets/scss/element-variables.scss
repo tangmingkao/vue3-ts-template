@@ -1,0 +1,18 @@
+$--colors: (
+  "primary": (
+    "base": #f4a62a,
+  ),
+);
+//在项目中改变 Element 的样式变量
+@forward 'element-plus/theme-chalk/src/common/var.scss' with (
+  $colors: $--colors
+);
+
+@import './common-variables.scss';
+
+
+
+
+
+
+
