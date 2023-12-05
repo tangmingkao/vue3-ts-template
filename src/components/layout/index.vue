@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import { useRoute } from "vue-router";
+import Header from "../header/index.vue";
+import Bottom from "../bottom/index.vue";
 
 const route = useRoute();
 
@@ -14,12 +16,16 @@ const bottomForbiddenFlag = computed(() => {
 </script>
 <template>
   <div class="app-layout-wrapper">
-    <div class="layout-header-wrapper"></div>
+    <div class="layout-header-wrapper">
+      <Header></Header>
+    </div>
     <div class="layout-main-wrapper">
       <router-view class="child-view"></router-view>
     </div>
     <div class="layout-bottom-wrapper">
-      <div class="layout-bottom-inner-wp" v-if="bottomForbiddenFlag"></div>
+      <div class="layout-bottom-inner-wp" v-if="bottomForbiddenFlag">
+        <Bottom></Bottom>
+      </div>
     </div>
   </div>
 </template>
@@ -32,9 +38,7 @@ const bottomForbiddenFlag = computed(() => {
   justify-content: space-between;
   align-items: center;
   .layout-header-wrapper {
-    height: 50px;
     width: 100%;
-    background: yellow;
     flex-shrink: 0;
   }
   .layout-main-wrapper {
@@ -45,12 +49,7 @@ const bottomForbiddenFlag = computed(() => {
   }
   .layout-bottom-wrapper {
     width: 100%;
-    background: blue;
     flex-shrink: 0;
-    .layout-bottom-inner-wp {
-      // test code
-      height: 50px;
-    }
   }
 }
 </style>

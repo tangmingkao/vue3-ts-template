@@ -21,7 +21,7 @@ import i18nPlugin from "@/plugins/i18n-plugin";
 
 const app = createApp(App);
 
-app.use(ElementPlus, { size: "large", zIndex: 3000 });
+app.use(ElementPlus, { size: "default", zIndex: 3000 });
 app.use(piniaStore);
 app.use(router);
 const i18n = i18nPlugin();
